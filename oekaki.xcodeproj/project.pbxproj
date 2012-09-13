@@ -20,6 +20,9 @@
 		43005B57160066DC00F579AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43005B38160066DC00F579AF /* Foundation.framework */; };
 		43005B5F160066DC00F579AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43005B5D160066DC00F579AF /* InfoPlist.strings */; };
 		43005B62160066DC00F579AF /* oekakiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43005B61160066DC00F579AF /* oekakiTests.m */; };
+		43005B6D1600696F00F579AF /* drawLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43005B6C1600696F00F579AF /* drawLine.m */; };
+		43005B781600853400F579AF /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 43005B771600853400F579AF /* Line.m */; };
+		43005B7B1600862100F579AF /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43005B7A1600862100F579AF /* CanvasView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		43005B5E160066DC00F579AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43005B60160066DC00F579AF /* oekakiTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oekakiTests.h; sourceTree = "<group>"; };
 		43005B61160066DC00F579AF /* oekakiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = oekakiTests.m; sourceTree = "<group>"; };
+		43005B6B1600696F00F579AF /* drawLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = drawLine.h; path = ../drawLine.h; sourceTree = "<group>"; };
+		43005B6C1600696F00F579AF /* drawLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = drawLine.m; path = ../drawLine.m; sourceTree = "<group>"; };
+		43005B761600853400F579AF /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line.h; path = ../Line.h; sourceTree = "<group>"; };
+		43005B771600853400F579AF /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line.m; path = ../Line.m; sourceTree = "<group>"; };
+		43005B791600862100F579AF /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasView.h; path = ../CanvasView.h; sourceTree = "<group>"; };
+		43005B7A1600862100F579AF /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasView.m; path = ../CanvasView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,12 @@
 				43005B48160066DC00F579AF /* MainStoryboard.storyboard */,
 				43005B4B160066DC00F579AF /* ViewController.h */,
 				43005B4C160066DC00F579AF /* ViewController.m */,
+				43005B6B1600696F00F579AF /* drawLine.h */,
+				43005B6C1600696F00F579AF /* drawLine.m */,
+				43005B761600853400F579AF /* Line.h */,
+				43005B771600853400F579AF /* Line.m */,
+				43005B791600862100F579AF /* CanvasView.h */,
+				43005B7A1600862100F579AF /* CanvasView.m */,
 				43005B3D160066DC00F579AF /* Supporting Files */,
 			);
 			path = oekaki;
@@ -261,6 +276,9 @@
 				43005B43160066DC00F579AF /* main.m in Sources */,
 				43005B47160066DC00F579AF /* AppDelegate.m in Sources */,
 				43005B4D160066DC00F579AF /* ViewController.m in Sources */,
+				43005B6D1600696F00F579AF /* drawLine.m in Sources */,
+				43005B781600853400F579AF /* Line.m in Sources */,
+				43005B7B1600862100F579AF /* CanvasView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +452,7 @@
 				43005B67160066DC00F579AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43005B68160066DC00F579AF /* Build configuration list for PBXNativeTarget "oekakiTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +461,7 @@
 				43005B6A160066DC00F579AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

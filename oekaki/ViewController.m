@@ -7,12 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "drawLine.h"
 
-@interface ViewController ()
+
+@interface ViewController()
+@property (weak, nonatomic) IBOutlet UIButton *makeLine;
+@property (weak, nonatomic) IBOutlet UIButton *drawButton;
+@property (weak, nonatomic) IBOutlet UIButton *rankView;
 
 @end
 
 @implementation ViewController
+@synthesize makeLine;
+@synthesize drawButton;
+@synthesize rankView;
 
 - (void)viewDidLoad
 {
@@ -22,13 +30,21 @@
 
 - (void)viewDidUnload
 {
+    [self setDrawButton:nil];
+    [self setMakeLine:nil];
+    [self setRankView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+//線画作成画面へ
+- (IBAction)makeLine:(id)sender {
+}
+//塗り絵画面へ
+- (IBAction)drawButton:(id)sender {
+}
+//ランキング画面へ
+- (IBAction)rankView:(id)sender {
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CanvasView.h
 //  oekaki
 //
 //  Created by techcamp on 12/09/12.
@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-//@class drawLine;
 
-@interface ViewController : UIViewController {
-	//IBOutlet drawLine *drawView;
+@interface CanvasView : UIView{
+    NSMutableArray *lines;
 }
+
+@property (retain) NSMutableArray *lines;
 
 @end

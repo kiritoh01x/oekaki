@@ -1,22 +1,197 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2617" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--View Controller - Topmenu-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Topmenu" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nxQ-nK-xMk">
+                                <rect key="frame" x="110" y="284" width="100" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="線画を作る">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeLine:" destination="2" eventType="touchUpInside" id="zJK-8B-DHz"/>
+                                    <segue destination="3tS-rz-KC1" kind="modal" id="yeA-zS-3nU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VBA-2Q-pqw">
+                                <rect key="frame" x="103" y="338" width="115" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ぬり絵をする">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="drawButton:" destination="2" eventType="touchUpInside" id="xUF-HA-dfu"/>
+                                    <action selector="rankView:" destination="2" eventType="touchUpInside" id="FUd-lm-uR6"/>
+                                    <segue destination="El8-ki-vSV" kind="modal" id="du2-1H-FSa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GIj-Bd-7On">
+                                <rect key="frame" x="110" y="396" width="100" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ランキング">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="l9G-f0-aA2" kind="modal" identifier="drawSegue" id="0qe-4b-sVr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawButton" destination="VBA-2Q-pqw" id="zaI-Fm-YX9"/>
+                        <outlet property="makeLine" destination="nxQ-nK-xMk" id="08b-ec-aqB"/>
+                        <outlet property="rankView" destination="GIj-Bd-7On" id="tJI-ef-gJR"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="78" y="54"/>
+        </scene>
+        <!--View Controller - drawing-->
+        <scene sceneID="ttc-DL-fyH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VS2-HZ-tEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="drawing" id="El8-ki-vSV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DVL-y4-UWu" customClass="CanvasView">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="icZ-zG-QyY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="6xa-RN-rEV">
+                                <rect key="frame" x="206" y="339" width="94" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </stepper>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Aht-fY-2th">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="undo" id="o4r-JD-l8B"/>
+                                    <barButtonItem systemItem="trash" id="VdS-yH-QQh"/>
+                                    <barButtonItem systemItem="save" id="kSz-do-Buh"/>
+                                    <barButtonItem style="plain" id="UlO-oE-v7Y">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bro-YD-fDk">
+                                            <rect key="frame" x="172" y="8" width="70" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title=""/>
+                                                <segment title=""/>
+                                                <segment title=""/>
+                                                <segment title=""/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="78" y="794"/>
+        </scene>
+        <!--View Controller - ranking-->
+        <scene sceneID="yiQ-kc-qsA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FBc-ZD-KSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="ranking" id="l9G-f0-aA2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Rp-0V-E2M">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="578" y="794"/>
+        </scene>
+        <!--View Controller - camera-->
+        <scene sceneID="1kk-S2-ta8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAR-VD-QO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="camera" id="3tS-rz-KC1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uD4-pU-3S3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cSm-Fn-Mbi">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="siy-yw-dCv"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="vQ3-gd-72q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="rDR-OK-iWt" kind="modal" id="QgW-LG-rLk"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="578" y="54"/>
+        </scene>
+        <!--View Controller - edge-->
+        <scene sceneID="2Ee-ox-2Tl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsA-6e-T5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="edge" id="rDR-OK-iWt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbi-b9-iOA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="sjU-Tn-9N5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="odc-zA-eXc">
+                                <rect key="frame" x="18" y="406" width="284" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="検出レベルの変更" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Xrv-Wf-c2a">
+                                <rect key="frame" x="94" y="356" width="133" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1079" y="54"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
